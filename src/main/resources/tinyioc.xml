@@ -1,0 +1,5 @@
+<beans>
+<bean name="helloworld" class="com.example.HelloWorld">
+    <property name="txt" value="hello world"/>
+</bean>
+</beans>
