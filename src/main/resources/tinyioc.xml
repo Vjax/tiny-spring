@@ -1,10 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <beans>
-    <bean name="message" class="com.example.Message">
-        <property name="message" value="hello"/>
-        <property name="helloworld" ref="helloworld"/>
+
+    <bean name="outputService" class="com.example.OutputService">
+        <property name="helloWorldService" ref="helloWorldService"></property>
     </bean>
-    <bean name="helloworld" class="com.example.HelloWorld">
-        <property name="txt" value="world"/>
-        <property name="message" ref="message"/>
+
+    <bean name="helloWorldService" class="com.example.HelloWorldServiceImpl">
+        <property name="text" value="Hello World!"></property>
+        <property name="outputService" ref="outputService"></property>
     </bean>
+
 </beans>
