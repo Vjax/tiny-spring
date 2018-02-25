@@ -1,8 +1,8 @@
-package com.example.factory;
+package com.example.beans.factory;
 
-import com.example.BeanDefinition;
+import com.example.beans.BeanDefinition;
 import com.example.BeanReference;
-import com.example.PropertyValue;
+import com.example.beans.PropertyValue;
 
 import java.lang.reflect.Field;
 

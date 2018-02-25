@@ -1,6 +1,6 @@
-package com.example;
+package com.example.beans;
 
-import com.example.io.ResourceLoader;
+import com.example.beans.io.ResourceLoader;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,8 +1,5 @@
-package com.example.io;
+package com.example.beans.io;
 
-import org.junit.Assert;
-
-import java.io.File;
 import java.net.URL;
 
 public class ResourceLoader {

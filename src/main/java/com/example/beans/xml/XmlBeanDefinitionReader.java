@@ -1,10 +1,10 @@
-package com.example.xml;
+package com.example.beans.xml;
 
-import com.example.AbstractBeanDefinitionReader;
-import com.example.BeanDefinition;
+import com.example.beans.AbstractBeanDefinitionReader;
+import com.example.beans.BeanDefinition;
 import com.example.BeanReference;
-import com.example.PropertyValue;
-import com.example.io.ResourceLoader;
+import com.example.beans.PropertyValue;
+import com.example.beans.io.ResourceLoader;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

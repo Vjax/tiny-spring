@@ -1,9 +1,11 @@
 package com.example;
 
-import com.example.factory.AutowireCapableBeanFactory;
-import com.example.factory.BeanFactory;
-import com.example.io.ResourceLoader;
-import com.example.xml.XmlBeanDefinitionReader;
+import com.example.beans.BeanDefinition;
+import com.example.beans.factory.AutowireCapableBeanFactory;
+import com.example.beans.io.ResourceLoader;
+import com.example.beans.xml.XmlBeanDefinitionReader;
+import com.example.context.ApplicationContext;
+import com.example.context.ClassPathXmlApplicationContext;
 import org.junit.Test;
 
 import java.util.Map;
@@ -13,16 +15,8 @@ public class test {
     @Test
     public void test(){
         try {
-            XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(new ResourceLoader());
-            xmlBeanDefinitionReader.loadBeanDefinition("tinyioc.xml");
-
-            AutowireCapableBeanFactory factory = new AutowireCapableBeanFactory();
-            for (Map.Entry<String,BeanDefinition>beanDefinitionEntry : xmlBeanDefinitionReader.getRegistry().entrySet()){
-                factory.registerBeanDefinition(beanDefinitionEntry.getKey(),beanDefinitionEntry.getValue());
-            }
-
-            factory.preInstantiateSingletons();
-            HelloWorld helloWorld = (HelloWorld)factory.getBean("helloworld");
+            ApplicationContext applicationContext = new ClassPathXmlApplicationContext("tinyioc.xml");
+            HelloWorld helloWorld = (HelloWorld)applicationContext.getBean("helloworld");
             helloWorld.HelloWorld();
         }catch (Exception e){
             e.printStackTrace();

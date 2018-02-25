@@ -1,6 +1,6 @@
-package com.example.factory;
+package com.example.beans.factory;
 
-import com.example.BeanDefinition;
+import com.example.beans.BeanDefinition;
 
 import java.util.ArrayList;
 import java.util.Iterator;
