@@ -2,9 +2,11 @@ package com.example;
 
 public class HelloWorld {
 
-    private String txt;
+    public  String txt;
+
+    private Message message;
 
     public void HelloWorld(){
-        System.out.println(txt);
+        System.out.println(message.message+txt);
     }
 }

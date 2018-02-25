@@ -16,10 +16,12 @@ public class test {
             XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(new ResourceLoader());
             xmlBeanDefinitionReader.loadBeanDefinition("tinyioc.xml");
 
-            BeanFactory factory = new AutowireCapableBeanFactory();
+            AutowireCapableBeanFactory factory = new AutowireCapableBeanFactory();
             for (Map.Entry<String,BeanDefinition>beanDefinitionEntry : xmlBeanDefinitionReader.getRegistry().entrySet()){
                 factory.registerBeanDefinition(beanDefinitionEntry.getKey(),beanDefinitionEntry.getValue());
             }
+
+            factory.preInstantiateSingletons();
             HelloWorld helloWorld = (HelloWorld)factory.getBean("helloworld");
             helloWorld.HelloWorld();
         }catch (Exception e){
